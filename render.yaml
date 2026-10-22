@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: goon-server
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: TRUST_PROXY
+        value: "1"
